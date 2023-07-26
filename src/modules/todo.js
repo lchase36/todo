@@ -2,7 +2,6 @@ import Project from "./project";
 
 const Todo = () => {
   let projects = [];
-  projects.push(Project("Tasks"));
 
   const getProjects = () => projects;
 
@@ -11,13 +10,11 @@ const Todo = () => {
   };
 
   const addProject = (newProject) => {
-    const isInProjects = () => {
-      return projects.find((project) => {
-        project.getTitle() === newProject.getTitle();
-      });
-    };
-    if (!isInProjects) {
-      tasks.push(task);
+    const foundProject = projects.find((project) => {
+      return project.getTitle() === newProject.getTitle();
+    });
+    if (foundProject === undefined) {
+      projects.push(newProject);
     }
   };
   const removeProject = (projectTitle) => {
@@ -25,6 +22,9 @@ const Todo = () => {
       project.getTitle() !== projectTitle;
     });
   };
+
+  const defaultProject = Project("Tasks");
+  addProject(defaultProject);
 
   return {
     getProjects,

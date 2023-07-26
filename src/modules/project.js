@@ -13,15 +13,14 @@ const Project = (title) => {
   };
 
   const addTask = (newTask) => {
-    const isInTasks = () => {
-      return tasks.find((task) => {
-        task.getTitle() === newTask.getTitle();
-      });
-    };
-    if (!isInTasks) {
+    const foundTask = tasks.find((task) => {
+      return task.getTitle() === newTask.getTitle();
+    });
+    if (foundtask === undefined) {
       tasks.push(newTask);
     }
   };
+
   const removeTask = (taskTitle) => {
     tasks = tasks.filter((task) => task.getTitle() !== taskTitle);
   };

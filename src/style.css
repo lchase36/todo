@@ -1,8 +1,71 @@
-body {
+html, body {
   margin: 0;
+  height: 100%;
 }
-#container {
-  background-color: gray;
-  height: 600px;
+
+body {
+  display: grid;
+  grid-template: 
+  "header header" 50px
+  "sidebar project" auto
+  / 250px auto;
+  background: rgb(243, 242, 242);
+	font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#modal {
+  display: none;
+}
+
+
+#header {
+  grid-area: header;
+  padding-left: 24px;
+  border: 1px solid #adadad;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+#header h1 {
+  margin: 0;
+  color: rgb(37, 45, 61);
+  font-weight: 500;
+}
+
+#sidebar {
+  padding: 16px;
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #adadad;
+  background: white;
+}
+
+#add-project {
+  font-weight: bold;
+  color: white;
+  height: 40px;
   width: 100%;
+  background: rgb(56, 69, 93);
+	border: 2px solid rgb(40, 50, 67);
+	border-radius: 4px;
+  cursor: pointer;
+}
+
+#add-project:hover {
+  background: rgb(37, 45, 61);
+	border-color: rgb(93, 114, 153);
+}
+
+#add-project:active {
+  background: rgb(71, 87, 118);
+}
+
+#tasks {
+  grid-area: project;
+  background: white;
+  margin: 14px;
+  border: 1px solid #adadad;
+  border-radius: 4px;
 }
