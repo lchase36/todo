@@ -16,7 +16,7 @@ const Project = (title) => {
     const foundTask = tasks.find((task) => {
       return task.getTitle() === newTask.getTitle();
     });
-    if (foundtask === undefined) {
+    if (foundTask === undefined) {
       tasks.push(newTask);
     }
   };

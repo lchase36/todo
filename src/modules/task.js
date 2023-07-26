@@ -1,12 +1,10 @@
-const Task = (title, date = "", desc = "", priority = 0) => {
+const Task = (title, date = "", priority = 0) => {
   let taskTitle = title;
   let taskDate = date;
-  let taskDesc = desc;
   let taskPriority = priority;
 
   const getTitle = () => taskTitle;
   const getDate = () => taskDate;
-  const getDescription = () => taskDesc;
   const getPriority = () => taskPriority;
 
   const setTitle = (newTitle) => {
@@ -17,10 +15,6 @@ const Task = (title, date = "", desc = "", priority = 0) => {
     taskDate = newDate;
   };
 
-  const setDescription = (newDesc) => {
-    taskDesc = newDesc;
-  };
-
   const setPriority = (newPriority) => {
     taskPriority = newPriority;
   };
@@ -28,11 +22,9 @@ const Task = (title, date = "", desc = "", priority = 0) => {
   return {
     getTitle,
     getDate,
-    getDescription,
     getPriority,
     setTitle,
     setDate,
-    setDescription,
     setPriority,
   };
 };

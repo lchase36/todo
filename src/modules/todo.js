@@ -2,6 +2,7 @@ import Project from "./project";
 
 const Todo = () => {
   let projects = [];
+  let activeProject;
 
   const getProjects = () => projects;
 
@@ -9,10 +10,14 @@ const Todo = () => {
     projects = newProjects;
   };
 
-  const addProject = (newProject) => {
-    const foundProject = projects.find((project) => {
-      return project.getTitle() === newProject.getTitle();
+  const getProject = (projectTitle) => {
+    return projects.find((project) => {
+      return project.getTitle() === projectTitle;
     });
+  };
+
+  const addProject = (newProject) => {
+    const foundProject = getProject(newProject.getTitle());
     if (foundProject === undefined) {
       projects.push(newProject);
     }
@@ -23,14 +28,22 @@ const Todo = () => {
     });
   };
 
-  const defaultProject = Project("Tasks");
-  addProject(defaultProject);
+  const getActiveProject = () => activeProject;
+
+  const setActiveProject = (projectTitle) => {
+    const newActiveProject = getProject(projectTitle);
+    if (newActiveProject !== undefined) {
+      activeProject = newActiveProject;
+    }
+  };
 
   return {
     getProjects,
     setProjects,
     addProject,
     removeProject,
+    getActiveProject,
+    setActiveProject,
   };
 };
 export default Todo;

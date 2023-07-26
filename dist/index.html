@@ -4,26 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo List</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
   <script src="./index.js"></script>
-  <div id="modal" style="display: none;">
-    <form>
-      <div>
-        <label>Priority</label>
-        <input type="number">
-      </div>
-      <div>
-        <label>Name</label>
-        <input type="text">
-      </div>
-      <div>
-        <label>Due Date</label>
-        <input type="date">
-      </div>
-    </form>
-  </div>
-
   <div id="header">
     <h1>Todo List</h1>
   </div>
@@ -35,6 +19,32 @@
     </ul>
   </div>
   <div id="tasks">
+    <button class="icon-button active"  id="add-task">
+      <span class="material-symbols-outlined large-icon">add</span>
+      <span>Add Task</span>
+    </button>
+    <form id="new-task">
+      <div>
+        <input id="priority" type="number" placeholder="0">
+        <label for="priority">Priority</label>
+      </div>
+      <div>
+        <input id="name" type="text" placeholder="Task">
+        <label for="name">Name of Task</label>
+      </div>
+      <div>
+        <input id="date" type="date">
+        <label for="date">Due Date</label>
+      </div>
+      <div class="button-container">
+      <button id="create-task" class="icon-button" type="button">
+        <span class="material-symbols-outlined large-icon">done</span>
+      </button>
+      <button id="cancel-task" class="icon-button" type="button">
+        <span class="material-symbols-outlined large-icon">close</span>
+      </button>
+      </div>
+    </form>
   </div>
 </body>
 </html>
