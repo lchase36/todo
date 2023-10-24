@@ -56,8 +56,8 @@ input[type=number] {
   flex-direction: row;
 }
 
-#create-task,
-#cancel-task {
+.create,
+.cancel {
   border: none;
   height: 50px;
   width: 40px;
@@ -65,17 +65,17 @@ input[type=number] {
   display: flex;
 }
 
-#create-task span,
-#cancel-task span,
+.create span,
+.cancel span,
 #add-task .material-symbols.outlined {
   font-size: 30px;
 }
 
-#create-task {
+.create {
   color: blue;
 }
 
-#cancel-task {
+.cancel {
   color: red;
 }
 
@@ -123,6 +123,11 @@ input[type=number] {
   background: rgb(71, 87, 118);
 }
 
+#new-project {
+  display: grid;
+  grid-template-columns: 150px auto auto;
+}
+
 #project-list {
   padding: 0;
   display: flex;
@@ -141,6 +146,10 @@ input[type=number] {
   cursor: pointer;
   border-radius: 4px;
   border: 1px solid #adadad;
+}
+
+#project-list li.active {
+  background: rgb(227, 231, 239);
 }
 
 #project-list li:hover {

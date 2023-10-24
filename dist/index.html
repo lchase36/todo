@@ -15,6 +15,11 @@
     <button id="add-project" type="button">
       Add Project
     </button>
+    <form id="new-project">
+      <input type="text" id="project-name" placeholder="Project Name">
+      <button type="button" class="create icon-button"><span class="material-symbols-outlined">done</span></button>
+      <button type="button" class="cancel icon-button"><span class="material-symbols-outlined">close</span></button>
+    </form>
     <ul id="project-list">
     </ul>
   </div>
@@ -37,10 +42,10 @@
         <label for="date">Due Date</label>
       </div>
       <div class="button-container">
-      <button id="create-task" class="icon-button" type="button">
+      <button id="create-task" class="icon-button create" type="button">
         <span class="material-symbols-outlined large-icon">done</span>
       </button>
-      <button id="cancel-task" class="icon-button" type="button">
+      <button id="cancel-task" class="icon-button cancel" type="button">
         <span class="material-symbols-outlined large-icon">close</span>
       </button>
       </div>

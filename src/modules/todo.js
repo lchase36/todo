@@ -23,8 +23,14 @@ const Todo = () => {
     }
   };
   const removeProject = (projectTitle) => {
+    projects.forEach((project) => {
+      console.log(project.getTitle());
+    });
     projects = projects.filter((project) => {
-      project.getTitle() !== projectTitle;
+      return project.getTitle() !== projectTitle;
+    });
+    projects.forEach((project) => {
+      console.log(project.getTitle());
     });
   };
 
