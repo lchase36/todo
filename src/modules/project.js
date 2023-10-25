@@ -25,6 +25,16 @@ const Project = (title) => {
     tasks = tasks.filter((task) => task.getTitle() !== taskTitle);
   };
 
+  const toJSONString = () => {
+    const taskList = [];
+    tasks.forEach((task) => {
+      const taskString = task.toStorageObj();
+      taskList.push(taskString);
+    });
+
+    return JSON.stringify(taskList);
+  };
+
   return {
     getTitle,
     getTasks,
@@ -32,6 +42,7 @@ const Project = (title) => {
     setTasks,
     addTask,
     removeTask,
+    toJSONString,
   };
 };
 export default Project;

@@ -19,6 +19,14 @@ const Task = (title, date = "", priority = 0) => {
     taskPriority = newPriority;
   };
 
+  const toStorageObj = () => {
+    return {
+      title: taskTitle,
+      date: taskDate,
+      priority: taskPriority,
+    };
+  };
+
   return {
     getTitle,
     getDate,
@@ -26,6 +34,7 @@ const Task = (title, date = "", priority = 0) => {
     setTitle,
     setDate,
     setPriority,
+    toStorageObj,
   };
 };
 

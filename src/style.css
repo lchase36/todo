@@ -13,6 +13,28 @@ body {
 	font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+#add-project {
+  display: none;
+}
+#add-project.active {
+  display: revert;
+}
+
+form#new-project {
+  display: none;
+}
+
+form#new-project.active {
+  display: grid;
+  width: 100%;
+  box-sizing: border-box;
+  grid-template-columns: 150px 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 16px;
+}
+
 form#new-task {
   display: none;
   width: 100%;

@@ -1,5 +1,3 @@
-import Project from "./project";
-
 const Todo = () => {
   let projects = [];
   let activeProject;
@@ -23,14 +21,8 @@ const Todo = () => {
     }
   };
   const removeProject = (projectTitle) => {
-    projects.forEach((project) => {
-      console.log(project.getTitle());
-    });
     projects = projects.filter((project) => {
       return project.getTitle() !== projectTitle;
-    });
-    projects.forEach((project) => {
-      console.log(project.getTitle());
     });
   };
 
