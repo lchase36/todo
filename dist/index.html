@@ -8,48 +8,50 @@
 </head>
 <body>
   <script src="./index.js"></script>
-  <div id="header">
-    <h1>Todo List</h1>
-  </div>
-  <div id="sidebar">
-    <button id="add-project" class="active" type="button">
-      Add Project
-    </button>
-    <form id="new-project">
-      <input type="text" id="project-name" placeholder="Project Name">
-      <button id="create-project" type="button" class="create icon-button"><span class="material-symbols-outlined">done</span></button>
-      <button id="cancel-project" type="button" class="cancel icon-button"><span class="material-symbols-outlined">close</span></button>
-    </form>
-    <ul id="project-list">
-    </ul>
-  </div>
-  <div id="tasks">
-    <button class="icon-button active"  id="add-task">
-      <span class="material-symbols-outlined large-icon">add</span>
-      <span>Add Task</span>
-    </button>
-    <form id="new-task">
-      <div>
-        <input id="priority" type="number" placeholder="0">
-        <label for="priority">Priority</label>
-      </div>
-      <div>
-        <input id="name" type="text" placeholder="Task">
-        <label for="name">Name of Task</label>
-      </div>
-      <div>
-        <input id="date" type="date">
-        <label for="date">Due Date</label>
-      </div>
-      <div class="button-container">
-        <button id="create-task" class="icon-button create" type="button">
-          <span class="material-symbols-outlined large-icon">done</span>
-        </button>
-        <button id="cancel-task" class="icon-button cancel" type="button">
-          <span class="material-symbols-outlined large-icon">close</span>
-        </button>
-      </div>
-    </form>
+  <div id="page">
+    <div id="header">
+      <h1>Todo List</h1>
+    </div>
+    <div id="sidebar">
+      <button id="add-project" class="active" type="button">
+        Add Project
+      </button>
+      <form id="new-project">
+        <input type="text" id="project-name" placeholder="Project Name">
+        <button id="create-project" type="button" class="create icon-button"><span class="material-symbols-outlined">done</span></button>
+        <button id="cancel-project" type="button" class="cancel icon-button"><span class="material-symbols-outlined">close</span></button>
+      </form>
+      <ul id="project-list">
+      </ul>
+    </div>
+    <div id="tasks">
+      <button class="icon-button active"  id="add-task">
+        <span class="material-symbols-outlined large-icon">add</span>
+        <span>Add Task</span>
+      </button>
+      <form id="new-task">
+        <div>
+          <input id="priority" type="number" placeholder="0">
+          <label for="priority">Priority</label>
+        </div>
+        <div>
+          <input id="name" type="text" placeholder="Task">
+          <label for="name">Name of Task</label>
+        </div>
+        <div>
+          <input id="date" type="date">
+          <label for="date">Due Date</label>
+        </div>
+        <div class="button-container">
+          <button id="create-task" class="icon-button create" type="button">
+            <span class="material-symbols-outlined large-icon">done</span>
+          </button>
+          <button id="cancel-task" class="icon-button cancel" type="button">
+            <span class="material-symbols-outlined large-icon">close</span>
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </body>
 </html>

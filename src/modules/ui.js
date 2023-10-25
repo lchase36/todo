@@ -71,14 +71,31 @@ const userInterface = () => {
   const renderTask = (task) => {
     const taskDiv = document.createElement("div");
     taskDiv.classList.add("task");
+    const priorityDiv = document.createElement("div");
     const priority = document.createElement("h2");
     priority.textContent = String(task.getPriority());
     const title = document.createElement("h3");
     title.textContent = task.getTitle();
     const date = document.createElement("span");
     date.textContent = task.getDate();
+    priorityDiv.appendChild(priority);
 
-    taskDiv.append(priority, title, date);
+    const removeButton = document.createElement("button");
+    removeButton.classList.add("icon-button");
+    const symbol = document.createElement("span");
+    symbol.classList.add("material-symbols-outlined");
+    symbol.textContent = "close";
+    removeButton.appendChild(symbol);
+
+    const removeTask = () => {
+      const activeProject = todo.getActiveProject();
+      activeProject.removeTask(task.getTitle());
+      saveProjectToStorage(activeProject);
+      renderProjectTasks(activeProject);
+    };
+    removeButton.addEventListener("click", removeTask);
+
+    taskDiv.append(priorityDiv, title, date, removeButton);
     projectElem.insertBefore(taskDiv, addTaskBtn);
   };
 
@@ -136,7 +153,6 @@ const userInterface = () => {
   const renderProject = (project) => {
     const projItem = document.createElement("li");
     const title = project.getTitle();
-    const activeProject = todo.getActiveProject();
     const id = title.replace(/\s+/g, "-").toLowerCase();
     projItem.id = id;
     const itemTitle = document.createElement("span");
